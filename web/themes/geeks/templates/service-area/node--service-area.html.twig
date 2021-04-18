@@ -1,0 +1,34 @@
+{# Create classes array. The 'node' class is required for contextual edit links. #}
+{% set classes = [
+  'node'
+] %}
+
+{# BEM inspired class syntax: https://en.bem.info/
+   Enable this code if you would like node classes like "article article--layout-teaser", where article is the content type and teaser is the view mode.
+{% set classes = classes|merge([
+  node.bundle|clean_class,
+  view_mode ? node.bundle|clean_class ~ '--layout-' ~ view_mode|clean_class
+]) %}
+{% set title_classes = [
+  node.bundle|clean_class ~ '__title'
+] %}
+#}
+
+<article{{ attributes.addClass(classes) }}>
+
+
+		<div class="row">
+			<div class="col-md-5">
+				<div class="area-details">
+					<h3 class="area-name mb-4">{{ node.title.value }}</h3>
+					<p class="font-weight-bold">{{ content.field_service_area_locations.0 }}</p>
+					{{ content.body }}
+				</div>
+			</div>
+			<div class="col-md-7">
+				<div class="area-map">{{ content.field_service_area_map_image }}</div>
+			</div>
+		</div>
+
+
+</article><!-- /.node -->

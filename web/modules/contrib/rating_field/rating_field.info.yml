@@ -1,0 +1,14 @@
+# Package info
+name: Rating Field
+type: module
+description: 'Provides a new field for Drupal 8 in the format of a configurable rating grid.'
+core: 8.x
+package: Field types
+dependencies:
+  - drupal:field
+  - drupal:system (>=8.7.0)
+
+# Information added by Drupal.org packaging script on 2019-08-27
+version: '8.x-1.0-alpha1'
+project: 'rating_field'
+datestamp: 1566907992

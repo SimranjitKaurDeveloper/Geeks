@@ -1,0 +1,410 @@
+
+/* HOMEPAGE PACKAGE SERVICE CARD CSS */
+
+.home-business-policy {
+    background-color: white;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(226, 225, 225);
+}
+
+.home-business-policy-title {
+    font-weight: 700;
+}
+
+
+.package-service-link {
+    text-transform: uppercase;
+    background: linear-gradient(to right, #fdb120, #fd761a);
+    color: white;
+    padding: 8px 25px;
+    border-radius: 5px;
+    transition: color 0.5s ease-in-out;
+  }
+
+  .package-service-link:hover {
+    background: linear-gradient(to right, #faa200, #ff6600);
+    color: white;
+    text-decoration: none;
+  }
+
+
+/*---------- BUSINESS POLICY CSS --------*/
+/* TOP SECTION */
+.business-services-container {
+    background-image: url(../../../images/new/business/Home-servise.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left center;
+    background-color: rgb(212, 217, 226);
+}
+
+.home-services-top-container  {
+    background-image: url(../../../images/new/business/Servise-Banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right center;
+    background-color: rgb(212, 217, 226);
+}
+
+.package-services-content {
+    width: 65%;
+}
+
+.package-price {
+    font-size: 50px;
+}
+
+.price-gst {
+    font-size: 18px;
+    color: rgb(46, 46, 46);
+    font-weight: 700;
+}
+
+.package-booking-btn {
+    background-color: var(--brandColor);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 2px;
+    padding: 8px 22px;
+    transition: color 0.3s ease;
+}
+
+.package-booking-btn:hover {
+    background: none;
+    text-decoration: none;
+    border: 2px solid var(--brandColor);
+    color: var(--brandColor);
+    padding: 6px 20px;
+}
+
+.services-package-btn {
+    border: 2px solid #353535;
+    color: #353535;
+    font-weight: bold;
+    border-radius: 2px;
+    padding: 6px 20px;
+    margin-left: 15px;
+}
+
+.services-package-btn:hover {
+    background-color: #353535;
+    color: #FFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* MIDDLE SECTION */
+.business-services-list > ul > li {
+    font-size: 14px;
+}
+
+.business-services-list > ul > li::before {
+    content: ' ';
+    display: inline-block;
+    margin: -2px 8px 0 -18px;
+    letter-spacing: inherit;
+    width: 8px;
+    height: 8px;
+    line-height: inherit;
+    vertical-align: middle;
+    background-color: #f97807;
+}
+
+/* BOTTOM SECTION */
+.business-services-bottom {
+    background-color: var(--brandColor);
+    color: #fff;
+}
+
+.biz-package-sms-input {
+    width: 100%;
+    border: none;
+    border-radius: 2px;
+    padding: 6px 20px;
+}
+
+.biz-package-sms-input:focus {
+    background-color: #fff !important;
+}
+
+.biz-package-sms-input::placeholder {
+    font-family: var(--fontRoboto);
+    font-size: 14px;
+}
+
+.biz-package-textarea {
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 6px 20px;
+}
+
+.biz-package-submit-btn {
+    background: none;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 6px 20px;
+    transition: all 0.3s ease;
+}
+
+.biz-package-submit-btn:hover {
+    background-color: #fff;
+    color: var(--brandColor);
+}
+
+
+
+/* -------------------- MAKING RESPONSIVE -------------------- */
+/* ============== (1800px-1899.98px) =============== */
+@media (min-width: 2100px) and (max-width: 2599.98px) {
+    .business-services-container, .home-services-top-container {
+        background-image: none;
+    }
+
+    .package-services-content {
+        width: 100%;
+    }
+}
+
+/* ============== (1800px-1899.98px) =============== */
+@media (min-width: 1900px) and (max-width: 2099.98px) {
+    .business-services-container, .home-services-top-container {
+        height: 640px;
+    }
+
+    .package-services-content {
+       margin-top: 60px;
+    }
+}
+
+/* ============== (1800px-1899.98px) =============== */
+@media (min-width: 1800px) and (max-width: 1899.98px) {
+    .business-services-container, .home-services-top-container {
+        height: 600px;
+    }
+
+    .package-services-content {
+        margin-top: 60px;
+     }
+}
+
+/* ============== (1700px-1799.98px) =============== */
+@media (min-width: 1700px) and (max-width: 1799.98px) {
+    .business-services-container, .home-services-top-container {
+        height: 570px;
+    }
+
+    .package-services-content {
+        margin-top: 40px;
+     }
+}
+
+/* ============== (1600px-1699.98px) =============== */
+@media (min-width: 1600px) and (max-width: 1699.98px) {
+    .business-services-container, .home-services-top-container {
+        height: 540px;
+    }
+
+    .package-services-content {
+        margin-top: 30px;
+     }
+}
+
+/* ============== (1500px-1599.98px) =============== */
+@media (min-width: 1500px) and (max-width: 1599.98px) {
+    .business-services-container, .home-services-top-container {
+        height: 520px;
+    }
+
+    .package-services-content {
+        margin-top: 20px;
+     }
+}
+
+/* =============== (851px-991px) ================= */
+@media (min-width: 851px) and (max-width: 991.98px) {
+    .home-services-top-container{
+        background-position: right -50px center;
+    }
+
+    .package-services-content {
+        width: 75%;
+    }
+}
+
+
+/* =============== (768px-850px) ================= */
+@media (min-width: 768px) and (max-width: 850.98px) {
+    .business-services-container {
+        background-position: left -60px center;
+    }
+
+    .home-services-top-container{
+        background-position: right -230px center;
+    }
+
+    .package-services-content {
+        width: 75%;
+    }
+}
+
+
+/* =============== (576px-767px) ================= */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .home-business-policy-title > h4 {
+        font-size: 22px;
+        margin-bottom: 0;
+    }
+
+    .home-business-policy-title {
+        font-size: 22px;
+    }
+
+    .package-service-link {
+        font-size: 14px;
+    }
+
+    /* packages card */
+    .business-services-container, .home-services-top-container {
+        background-image: none;
+    }
+    .package-services-content {
+        width: 100%;
+    }
+
+
+}
+
+/* =============== (530px-575px) ================= */
+@media (min-width: 540px) and (max-width: 575.98px) {
+
+    .home-business-policy-title {
+        font-size: 20px;
+    }
+
+    .package-service-link {
+        font-size: 14px;
+    }
+
+    /* packages card */
+    .business-services-container, .home-services-top-container {
+        background-image: none;
+    }
+    .package-services-content {
+        width: 100%;
+    }
+
+
+}
+
+/* =============== (500px-529px) ================= */
+@media (min-width: 500px) and (max-width: 539.98px) {
+    /* packages card */
+    .business-services-container, .home-services-top-container {
+        background-image: none;
+    }
+    .package-services-content {
+        width: 100%;
+    }
+    .home-business-policy-title {
+        font-size: 20px;
+    }
+
+    .package-service-link {
+        font-size: 14px;
+    }
+}
+
+/* ============== (425px-499px) ================= */
+@media (min-width: 425px) and (max-width: 499.98px) {
+    /* HOMEPAGE HOME BUSINESS POLICY */
+    .home-business-policy-title {
+        font-size: 20px;
+    }
+
+    .package-service-link {
+        font-size: 14px;
+        padding: 5px 20px;
+    }
+
+    /* packages card */
+    .business-services-container, .home-services-top-container {
+        background-image: none;
+    }
+    .package-services-content {
+        width: 100%;
+    }
+
+}
+
+/* =============== (375px-424px) ================= */
+@media (min-width: 375px) and (max-width: 424.98px) {
+    .home-business-policy {
+        padding: 20px 20px;
+    }
+
+    .home-business-policy-title {
+        font-size: 20px;
+    }
+
+    .home-business-policy-subtitle {
+        font-size: 14px;
+    }
+
+    .package-service-link {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    /* packages card */
+    .business-services-container, .home-services-top-container {
+        background-image: none;
+    }
+    .package-services-content {
+        width: 100%;
+    }
+
+}
+
+/* ================ (320px-374px) ================ */
+@media (min-width: 320px) and (max-width: 374.98px) {
+    .home-business-policy {
+        padding: 30px 10px;
+    }
+
+
+    .home-business-policy {
+        padding: 20px 20px;
+    }
+
+    .home-business-policy-title {
+        font-size: 18px;
+    }
+
+    .home-business-policy-subtitle {
+        font-size: 13px;
+    }
+
+    .package-service-link {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    /* packages card */
+    .business-services-container, .home-services-top-container {
+        background-image: none;
+    }
+    .package-services-content {
+        width: 100%;
+    }
+
+    .services-package-btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}

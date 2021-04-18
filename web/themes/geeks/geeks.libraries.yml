@@ -1,0 +1,55 @@
+global:
+  version: VERSION
+  css:
+    theme:
+      css/style.css: {}
+      css/layout.css: {}
+      css/main.css: {}
+      css/Menubar.css: {}
+      css/ServicePage.css: {}
+      css/HomepageServices.css: {}
+      css/HomeBusinessPolicy.css: {}
+      'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css': {type:external, attributes: { async: true } }
+
+  js:
+    js/modernizr.js: {}
+    js/layout.js: {}
+    js/main.js: {}
+    js/custom.js: {}
+    'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js': {type:external, attributes: { async: true } }
+
+
+#   js/build/scripts.js: {}
+
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+fonts:
+  css:
+    theme:
+      '//fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900': {type:external}
+      '//fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700': { type: external, minified: true }
+      '//fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700': {type:external}
+
+  # Uncomment the code above to load scripts.js file on all pages. This file also requires JQuery to be
+  # loaded on all pages. Consider implimenting your scripts through theme libraries if you wish to
+  # avoid this. https://www.drupal.org/developing/api/8/assets
+
+tabs:
+  version: VERSION
+  css:
+    component:
+      css/components/tabs.css: {}
+
+messages:
+  version: VERSION
+  css:
+    component:
+      css/components/messages.css: {}
+
+ie8:
+  version: VERSION
+  header: true
+  js:
+    js/selectivizr-min.js: { browsers: { IE: 'lte IE 8', '!IE': false }, minified: true, preprocess: false }

@@ -1,0 +1,491 @@
+.top-banner {
+    background-color: #000;
+    color: #fff;
+}
+
+.gaming-pc-banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+/*
+.gaming-pc-top-banner {
+    background-image: url(../../../images/new/pc/top-banner-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.gaming-pc-middle-banner {
+    background-image: url(../../../images/new/pc/middle-banner-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-top: 2px solid var(--brandColor);
+    border-bottom: 2px solid var(--brandColor);
+}
+
+.gaming-pc-bottom-banner {
+    background-image: url(../../../images/new/pc/bottom-banner-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+*/
+.feature-list > li {
+    font-size: 20px;
+}
+
+.feature-list > li::marker {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: var(--brandColor);
+}
+
+.special-gaming-pc-features > li {
+    font-size: 17px;
+}
+
+.gaming-pc-img > img {
+    width: 85%;
+}
+
+.gaming-pc-price {
+    color: #fff;
+}
+
+/* GAMING PC CARD */
+.product-card {
+    background-color: #000;
+}
+
+.card-border {
+    border-top: 2px solid var(--brandColor);
+    border-bottom: 2px solid var(--brandColor);
+}
+
+.right-border {
+    border-right: 1px solid var(--brandColor);
+}
+
+.left-border {
+    border-left: 1px solid var(--brandColor);
+
+}
+
+.product-card-btn {
+    color: #fcd2a7;
+    font-size: 18px;
+}
+
+.card-product-detail > ul > li {
+    color: var(--brandColor);
+}
+
+.pc-card-note {
+    background-color: #000000;
+}
+
+
+
+/* -------------------- MAKING RESPONSIVE -------------------- */
+
+/* =============== (851px-991px) ================= */
+@media (min-width: 851px) and (max-width: 991.98px) {
+    .top-banner {
+        display: none;
+    }
+
+    .gaming-pc-title {
+        font-size: 26px;
+        padding-top: 10px;
+    }
+
+    .feature-list > li {
+        font-size: 16px;
+        margin-bottom: -5px;
+    }
+
+    .gaming-pc-img > img {
+        width: 100%;
+    }
+
+    .gaming-pc-price > h3 {
+        font-size: 22px;
+    }
+}
+
+
+/* =============== (768px-850px) ================= */
+@media (min-width: 768px) and (max-width: 850.98px) {
+    .top-banner {
+        display: none;
+    }
+
+    .gaming-pc-title {
+        font-size: 26px;
+        padding-top: 10px;
+    }
+
+    .feature-list > li {
+        font-size: 16px;
+        margin-bottom: -5px;
+    }
+
+    .gaming-pc-img > img {
+        width: 100%;
+    }
+
+    .gaming-pc-price > h3 {
+        font-size: 22px;
+    }
+}
+
+
+/* =============== (576px-767px) ================= */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .top-banner {
+        display: none;
+    }
+
+    .gaming-pc-title {
+        font-size: 26px;
+        padding-top: 40px;
+    }
+
+    .feature-list > li {
+        font-size: 16px;
+        margin-bottom: -5px;
+    }
+
+    .gaming-pc-img > img {
+        width: 100%;
+        padding-bottom: 10px;
+    }
+
+    .small-device-gaming-pc-price {
+        margin-left: 20px;
+        padding-bottom: 20px;
+    }
+
+    .gaming-pc-price > h3 {
+        font-size: 22px;
+    }
+
+    .gaming-pc-price {
+        display: none;
+    }
+
+    /* SPECIAL GAMING PC */
+    .special-pc-column-one {order: 2}
+    .special-pc-column-two {order: 1}
+
+    .special-gaming-pc-features {
+        margin-top: -20px !important;
+        padding-bottom: 30px;
+    }
+}
+
+/* =============== (530px-575px) ================= */
+@media (min-width: 540px) and (max-width: 575.98px) {
+    .top-banner {
+        display: none;
+    }
+    .container { display: flex; flex-flow: column; }
+    .two { order: 1; }
+    .one { order: 2 }
+
+    .gaming-pc-title {
+        font-size: 28px;
+        padding-top: 40px;
+    }
+
+
+    .gaming-pc-img > img {
+        width: 50%;
+        padding-bottom: 20px;
+    }
+
+    .one {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .small-device-pc-config {
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 35px 0 20px;
+    }
+
+    .small-device-pc-config > p {
+        padding: 0 40px;
+    }
+
+    .gaming-pc-price {
+        display: none;
+    }
+
+    /* SPECIAL GAMING PC */
+    .special-pc-column-one {order: 2}
+    .special-pc-column-two {order: 1}
+
+    .special-gaming-pc-features {
+        margin-top: -20px !important;
+        padding-bottom: 30px;
+    }
+}
+
+/* =============== (500px-529px) ================= */
+@media (min-width: 500px) and (max-width: 539.98px) {
+    .top-banner {
+        display: none;
+    }
+
+    .container { display: flex; flex-flow: column; }
+    .two { order: 1; }
+    .one { order: 2 }
+
+    .gaming-pc-title {
+        font-size: 30px;
+        padding-top: 40px;
+    }
+
+    .gaming-pc-img > img {
+        width: 50%;
+        padding: 20px 0;
+    }
+
+    .one {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .small-device-pc-config {
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 35px 0 20px;
+    }
+
+    .small-device-pc-config > p {
+        padding: 0 20px;
+    }
+
+    .gaming-pc-price {
+        display: none;
+    }
+
+    /* SPECIAL GAMING PC */
+    .special-pc-column-one {order: 2}
+    .special-pc-column-two {order: 1}
+
+    .special-gaming-pc-features {
+        padding-bottom: 30px;
+    }
+
+    /* GAMING PC CARD */
+    .product-card-content > h3 {
+        font-size: 22px;
+    }
+
+    .product-card-content > p {
+        font-size: 16px;
+    }
+}
+
+/* ============== (425px-499px) ================= */
+@media (min-width: 425px) and (max-width: 499.98px) {
+    .top-banner {
+        display: none;
+    }
+
+    .container { display: flex; flex-flow: column; }
+    .two { order: 1; }
+    .one { order: 2 }
+
+    .gaming-pc-title {
+        font-size: 28px;
+        padding-top: 40px;
+    }
+
+    .gaming-pc-img > img {
+        width: 50%;
+        padding: 20px 0;
+    }
+
+    .one {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .small-device-pc-config {
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 35px 0 20px;
+    }
+
+    .small-device-pc-config > p {
+        padding: 0 30px;
+    }
+
+    .gaming-pc-price {
+        display: none;
+    }
+
+    /* SPECIAL GAMING PC */
+    .special-pc-column-one {order: 2}
+    .special-pc-column-two {order: 1}
+
+    .special-gaming-pc-features {
+        padding-bottom: 30px;
+    }
+
+    .special-gaming-pc-features > li {
+        margin-left: -20px !important;
+    }
+
+    .special-gaming-pc-img {
+        margin-top: 10px;
+    }
+
+
+    /* GAMING PC CARD */
+    .product-card-content > h3 {
+        font-size: 22px;
+    }
+
+    .product-card-content > p {
+        font-size: 14px;
+    }
+}
+
+/* =============== (375px-424px) ================= */
+@media (min-width: 375px) and (max-width: 424.98px) {
+    .top-banner {
+        display: none;
+    }
+
+    .container { display: flex; flex-flow: column; }
+    .two { order: 1; }
+    .one { order: 2 }
+
+    .gaming-pc-title {
+        font-size: 26px;
+        padding-top: 40px;
+    }
+
+
+    .gaming-pc-img > img {
+        width: 50%;
+        padding-bottom: 10px;
+    }
+
+    .one {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .small-device-pc-config {
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 25px 0 10px;
+    }
+
+    .small-device-pc-config > p {
+        padding: 0 10px;
+    }
+
+    .gaming-pc-price {
+        display: none;
+    }
+
+    /* SPECIAL GAMING PC */
+    .special-pc-column-one {order: 2}
+    .special-pc-column-two {order: 1}
+
+    .special-gaming-pc-features {
+        padding-bottom: 30px;
+    }
+
+    .special-gaming-pc-features > li {
+        margin-left: -20px !important;
+    }
+
+    .special-gaming-pc-img {
+        margin-top: 10px;
+    }
+
+    /* GAMING PC CARD */
+    .product-card-content > h3 {
+        font-size: 22px;
+    }
+
+    .product-card-content > p {
+        font-size: 14px;
+    }
+}
+
+/* ================ (320px-374px) ================ */
+@media (min-width: 320px) and (max-width: 374.98px) {
+    .top-banner {
+        display: none;
+    }
+
+    .container { display: flex; flex-flow: column; }
+    .two { order: 1; }
+    .one { order: 2 }
+
+    .gaming-pc-title {
+        font-size: 24px;
+        padding-top: 40px;
+    }
+
+    .gaming-pc-img > img {
+        width: 50%;
+        padding-bottom: 10px;
+    }
+
+    .one {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .small-device-pc-config {
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 20px 0 5px;
+    }
+
+    .small-device-pc-config > p {
+        padding: 0 5px;
+        font-size: 14px;
+    }
+
+    .gaming-pc-price {
+        display: none;
+    }
+
+    /* SPECIAL GAMING PC */
+    .special-pc-column-one {order: 2}
+    .special-pc-column-two {order: 1}
+
+    .special-gaming-pc-features {
+        padding-bottom: 30px;
+    }
+
+    .special-gaming-pc-features > li {
+        margin-left: -20px !important;
+    }
+
+    .special-gaming-pc-img {
+        margin-top: 10px;
+    }
+
+    /* GAMING PC CARD */
+     .product-card-content > h3 {
+        font-size: 20px;
+    }
+
+    .product-card-content > p {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,59 @@
+rating_field:
+  type: mapping
+  label: 'Rating field'
+  mapping:
+    value:
+      type: integer
+      label: 'Value'
+    question_delta:
+      type: integer
+      label: 'Question delta'
+
+field.storage_settings.rating_field:
+  type: mapping
+  label: 'Rating field settings'
+  mapping:
+    question_values:
+      type: sequence
+      label: 'Requested questions'
+      sequence:
+        type: string
+        label: 'Requested questions values'
+    scale_config:
+      type: mapping
+      label: 'Rating scale value'
+      mapping:
+        input_radios:
+          type: integer
+          label: 'Scale options'
+        option_1:
+          type: mapping
+          label: 'Settings for the numeric scale option'
+          mapping: 
+            max_value_rating:
+              type: integer
+              label: 'Max. numeric value input'
+            numeric_include_zero:
+              type: boolean
+              label: 'Include value 0 in the numeric option'
+        option_2:
+          type: mapping
+          label: 'Settings for the custom scale option'
+          mapping: 
+            custom_scale_values:
+              type: sequence
+              label: 'Custom scale values'
+              sequence:
+                type: string
+                label: 'Custom scale values'
+        include_na_option:
+          type: boolean
+          label: 'Include a n/a option also in the possible options'
+
+field.widget.settings.rating_widget:
+  type: mapping
+  label: 'Default rating field widget settings'
+  mapping:
+    show_label_field:
+      type: boolean
+      label: 'Show the rating field label'

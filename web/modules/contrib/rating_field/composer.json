@@ -1,0 +1,16 @@
+{   
+  "name": "drupal/rating_field",
+  "type": "drupal-module",
+  "description": "Provides a new field for displaying and storing a rating based on questions and options",
+  "keywords": ["Drupal", "field", "rating"],
+  "authors": [
+    {
+      "name": "Gorka Guerrero",
+      "email": "gorka.guerrero@esn.org",
+      "homepage": "https://www.drupal.org/u/gorkagr",
+      "role": "Maintainer"
+    }
+  ],
+  "homepage": "https://www.drupal.org/project/rating_field",
+  "license": "GPL-2.0+"
+}

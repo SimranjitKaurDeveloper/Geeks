@@ -1,0 +1,31 @@
+.services-card {
+    margin-bottom: 40px;
+}
+
+.services-icon {
+    height: 70px;
+    margin-bottom: 20px;
+}
+
+.services-card > h5 {
+    height: 40px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.featured-services-btn {
+    color: var(--brandColor);
+    font-family: var(--fontRoboto);
+    border: 1px solid var(--brandColor);
+    text-transform: uppercase;
+    padding: 8px 40px;
+    border-radius: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.featured-services-btn:hover {
+    background-color: var(--brandColor);
+    color: white;
+    text-decoration: none;
+
+}

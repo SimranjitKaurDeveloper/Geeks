@@ -1,0 +1,39 @@
+name: Geeks
+type: theme
+description: 'HTML5, SASS, Responsive grid starter theme.'
+package: Core
+base theme: classy
+# version: VERSION
+# core: 8.x
+
+libraries:
+  - core/normalize
+  - geeks/global
+  - geeks/fonts
+
+
+regions:
+  header: Header
+  help: Help
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  highlighted: Highlighted
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: Footer
+  header_top_bar: 'Header Top Bar'
+  header_logo: 'Header logo'
+  header_menu_bar: 'Header Menu Bar'
+  slider_bar: 'Slider Bar'
+  footer_one: 'Footer One'
+  footer_two: 'Footer Two'
+  footer_three: 'Footer Three'
+  footer_four: 'Footer Four'
+  footer_bottom_bar: 'Footer Bottom Bar'
+
+# Information added by Drupal.org packaging script on 2018-04-28
+version: '8.x-2.0'
+core: '8.x'
+project: 'geeks'
+datestamp: 1524949387

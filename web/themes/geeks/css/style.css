@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+/*-------------CUSTOM CSS----------------*/
+
+/*--------------*/
+/*---Menu Css---*/
+/*--------------*/
+
+
+/*--- (#block-mainnavigation) ---
+ul.menu{}
+ul li.menu-link{  padding-right: 15px;  list-style-type: none;  float: left;}
+ul li.menu-link a{  font-family: var(--fontRoboto);  font-size: 14px;  font-weight: 700;  color: #161616;  text-transform: uppercase;  margin-top: 5px;}
+*/
+.nav-items{display: inline-block !important;}
+.menu-link.is-active {    text-decoration: none;    color: var(--brandColor);    transition: color .1s ease-out;}
+
+/*--- (#block-footermenu) ---
+ul li.footer-link a{ font-family: var(--fontLato);    color: var(--darkGrayText);}
+.menu{ padding:0px}
+*/
+footer.bg-white{border-top:1px solid rgba(0,0,0,.1);}
+
+/*---Carousel CSS----*/
+#myCarousel .carousel-title, #myCarousel .carousel-subtitle {  color:#000;  text-align:left;  text-shadow:none;}
+#myCarousel .slider-link-btn{float:left}
+#myCarousel .carousel-control{width:6%}
+#myCarousel .carousel-control.left, #myCarousel .carousel-control.right{ background-image:none !important;}
+
+.service-area-content h4.content-title{ font-size: 24px; }
+h3.service-area-header{ font-size:28px; }
+
+/*----Menu-----------*/
+#basic-navbar-nav .book-online{float:right;}
+.nav-items.navbar-nav{float:right;}
+
+/*---Contactus-----*/
+.field--name-field-contact-us-block{width:100%;}
+
+.gaming-pc-banner{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+}
+
+.webform-submission-contact-paragraph-55-add-form input,.webform-submission-contact-paragraph-55-add-form textarea{
+  color:#000;
+}

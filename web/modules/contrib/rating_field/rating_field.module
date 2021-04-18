@@ -1,0 +1,171 @@
+<?php
+
+/**
+ * @file
+ * Provides functionality for handling a rating grid field.
+ */
+
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function rating_field_help($route_name, RouteMatchInterface $route_match) {
+
+  switch ($route_name) {
+    case 'help.page.rating_field':
+      $output = '';
+      $output .= '<h2>' . t('About') . '</h2>';
+      $output .= '<p>' . t('Provides a new field for displaying and storing a
+        rating based on questions and options that depends on the configuration
+        of the field and will be offered to the user to submit in any entity
+        form that uses this field.') . '</p>';
+
+      $output .= '<h2>' . t('Configuration') . '</h2>';
+      $output .= '<p>' . t('Once the rating_field has been added, first you
+        have to configure the options in the storage settings (field settings)
+        page. There, you have to set the options for this field, that can be
+        modified meanwhile the field has no value stored in the database:')
+      . '</p>';
+
+      $output .= '<dl>';
+      $output .= '<dt><strong>' . t('Default likert-type style') . '</strong></dt>';
+      $output .= '<dd>' . t('This option will add the devault values:
+        <em>Strongly disagree</em>, <em>Disagree</em>, <em>Neutral</em>,
+        <em>Agree</em> and <em>Strongly agree</em> as available options.') . '</dd>';
+      $output .= '<dt><strong>' . t('Numeric rating scale') . '</strong></dt>';
+      $output .= '<dd>' . t("This option gives the user to choose a numeric
+        value from a dropdown. The value chosen will be the max. value used to
+        render the options, from 1 to that number included. The user will have
+        the option as well to include or not the value '0' by choosing a
+        different option in a separate checkbox. If enabled, will add '0' before
+        the value '1' of the different options.") . '</dd>';
+      $output .= '<dt><strong>' . t('Custom scale') . '</strong></dt>';
+      $output .= '<dd>' . t('The last option allows the user to set custom
+        options as the possible options for the rating field. In the textarea
+        you can introduce one option per line up to a maximum of five (5).
+        If there is any duplicated line or more than 5, there will be an error
+        displayed.') . '</dd>';
+      $output .= '</dl>';
+
+      $output .= '<p>' . t("The last checkbox available in the value settings
+        adds an 'N/A' option to the list of options that previosly we have
+        selected. This option <strong>will be rendered before</strong> any
+        option.") . '</p>';
+
+      return $output;
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function rating_field_theme() {
+  return [
+    'rating' => [
+      'variables' => [
+        'attributes' => [],
+        'title' => '',
+        'description' => '',
+        'header' => NULL,
+        'rows' => NULL,
+        'empty' => '',
+        'responsive' => TRUE,
+        'striped' => TRUE,
+        'required' => NULL,
+        'show_label_field' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Prepares variables for rating field templates.
+ *
+ * Default template: rating.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing (the ones we use):
+ *   - header: An array containing the table headers. Each element of the array
+ *     is a localized string.
+ *   - rows: An array of table rows. Every row is an array of cells.
+ *     Each cell is an associative array with the following keys:
+ *     - data: The render array to display in the table cell containing the
+ *     input radio we want to be filled.
+ */
+function template_preprocess_rating(array &$variables) {
+  // Build an associative array of responsive classes keyed by column.
+  $responsive_classes = [];
+
+  // Format the table header:
+  $header_columns = 0;
+  if (!empty($variables['header'])) {
+    // Use a separate index with responsive classes as headers
+    // may be associative.
+    $responsive_index = -1;
+    foreach ($variables['header'] as $col_key => $cell) {
+      // Increase the responsive index.
+      $responsive_index++;
+      $cell_content = '';
+      if (!is_array($cell)) {
+        $header_columns++;
+        $cell_content = $cell;
+      }
+      $cell_attributes = [];
+      if ($col_key > 0) {
+        $cell_attributes = ['class' => 'th-center'];
+      }
+
+      $variables['header'][$col_key] = [];
+      $variables['header'][$col_key]['tag'] = 'th';
+      $variables['header'][$col_key]['attributes'] = new Attribute($cell_attributes);
+      $variables['header'][$col_key]['content'] = $cell_content;
+    }
+  }
+  $variables['header_columns'] = $header_columns;
+
+  // Rows and footer have the same structure.
+  $sections = ['rows'];
+  foreach ($sections as $section) {
+    if (!empty($variables[$section])) {
+      foreach ($variables[$section] as $row_key => $row) {
+        $cells = $row;
+
+        // Build row.
+        $variables[$section][$row_key] = [];
+        $variables[$section][$row_key]['cells'] = [];
+        if (!empty($cells)) {
+          // Reset the responsive index.
+          $responsive_index = -1;
+          foreach ($cells as $col_key => $cell) {
+            // Increase the responsive index.
+            $responsive_index++;
+
+            $cell_content = '';
+            $cell_attributes = [];
+            if (is_array($cell)) {
+              if (isset($cell['data'])) {
+                $cell_content = $cell['data'];
+                unset($cell['data']);
+              }
+              $cell_attributes = $cell;
+            }
+            // Copy RESPONSIVE_PRIORITY_LOW/RESPONSIVE_PRIORITY_MEDIUM
+            // class from header to cell as needed.
+            if (isset($responsive_classes[$responsive_index])) {
+              $cell_attributes['class'][] = $responsive_classes[$responsive_index];
+            }
+            $variables[$section][$row_key]['cells'][$col_key]['tag'] = 'td';
+            $variables[$section][$row_key]['cells'][$col_key]['attributes'] = new Attribute($cell_attributes);
+            $variables[$section][$row_key]['cells'][$col_key]['content'] = $cell_content;
+          }
+        }
+      }
+    }
+  }
+
+  // We set the striping to true, we want it.
+  $variables['attributes']['data-striping'] = 1;
+}

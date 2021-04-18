@@ -1,0 +1,45 @@
+
+
+
+  <!-- ______________________ MAIN _______________________ -->
+
+  <div id="main">
+    <div class="container1">
+      <div id="content-wrapper">
+        <section id="content">
+
+          <div id="content-header">
+
+            {{ page.breadcrumb }}
+
+            {% if page.highlighted|render %}
+              <div id="highlighted">{{ page.highlighted }}</div>
+            {% endif %}
+
+            {{ title_prefix }}
+
+            {% if title %}
+              <h1 class="title">{{ title }}</h1>
+            {% endif %}
+
+            {{ title_suffix }}
+            {{ page.help }}
+
+            {% if tabs %}
+              <div class="tabs">{{ tabs }}</div>
+            {% endif %}
+
+            {% if action_links %}
+              <ul class="action-links">{{ action_links }}</ul>
+            {% endif %}
+
+          </div><!-- /#content-header -->
+
+          {{ page.content }}
+
+
+        </section><!-- /#content -->
+
+      </div><!-- /#content-wrapper -->
+    </div><!-- /.container -->
+  </div><!-- /#main -->

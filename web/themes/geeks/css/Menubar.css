@@ -1,0 +1,374 @@
+.selected {
+    color: red;
+}
+.top-bar {
+    background-color: #282827;
+    color: #fff;
+    padding: 12px 0;
+}
+
+.top-bar-contact-num {
+    color: #DE680F;
+    font-size: 17px;
+    margin-left: 10px;
+    padding-right: 20px;
+}
+
+.top-left {
+    float: left;
+    margin-top: 2px;
+    margin-left: 5px;
+}
+
+.top-right {
+    float: right;
+    position: relative;
+}
+
+.register-button {
+    color: white;
+}
+
+.login-button {
+    background: linear-gradient(to right, #fdb120, #fd761a);
+    color: white;
+    border-radius: 30px;
+    padding: 4px 30px 4px 35px;
+    margin-left: 20px;
+    margin-right: 6px;
+}
+
+.person-icon {
+    position: absolute;
+    top: 6%;
+    left: 55%;
+}
+
+.small-device-top-left {
+    display: none;
+}
+
+.sm-device-authenticate-btn {
+    font-weight: 700;
+}
+
+/* ------ MENUBAR -------- */
+.brand-logo {
+    height: 100%;
+    width: 100%;
+}
+
+.menubar-bg {
+    background-color: white;
+    box-shadow: 0 3px 6px #dfdede;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-items {
+    margin-left: auto;
+}
+
+
+/* ------ MENUBAR TWO -------- */
+.menu-link{
+    padding-right: 30px;
+    font-family: var(--fontRoboto);
+    font-size: 14px;
+    font-weight: 700;
+    color: #161616;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.menu-link:hover{
+    text-decoration: none;
+    color: var(--brandColor);
+    transition: color 100ms ease-out;
+}
+
+
+
+.book-online {
+    background-color: var(--brandColor);
+    color: #fff;
+    font-family: var(--fontRoboto);
+    border-radius: 5px;
+    padding: 4px 25px;
+}
+
+.book-online:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+
+
+/* --------------MAKING RESPONSIVE---------------- */
+
+
+/* ================ (1025px-1199.98px) ==============*/
+@media (min-width: 1200px) and (max-width: 1299.98px) {
+}
+
+
+/* =============== (1025px-1199.98px) ============== */
+@media (min-width: 1025px) and (max-width: 1199.98px) {
+   .login-button {
+       margin: 0 20px;
+   }
+
+   .person-icon {
+    top: 6%;
+    left: 50%;
+    }
+
+   .menu-link {
+       padding-right: 20px;
+   }
+}
+
+/* ============== (992px-1024px) =============== */
+@media (min-width: 992px) and (max-width: 1024.98px) {
+    .login-button {
+        margin: 0 20px;
+    }
+
+    .person-icon {
+        top: 6%;
+        left: 50%;
+    }
+
+    .menu-link {
+        padding-right: 20px;
+    }
+}
+
+
+/* =============== (768px-991px) =============== */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .top-bar-contact-num {
+        margin-left: 15px;
+    }
+
+    .brand-logo {
+        width: 90%;
+    }
+
+    .person-icon {
+        top: 6%;
+        left: 52%;
+        }
+
+    .menu-link {
+        padding-right: 15px;
+    }
+
+    .book-online {
+        background-color: var(--brandColor);
+        color: #fff;
+        font-family: var(--fontRoboto);
+        border-radius: 5px;
+        padding: 4px 10px;
+    }
+
+}
+
+
+/* ================ (576px-767px) ================ */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .top-bar-contact-num {
+        margin-left: 15px;
+    }
+
+    .brand-logo {
+        height: 90%;
+        width: 90%;
+    }
+
+    .nav-items {
+        margin-top: 10px;
+    }
+
+    .hamburger-menu {
+        margin-left: auto;
+    }
+
+    .book-online {
+       font-size: 14px;
+       font-weight: 600;
+    }
+
+    .top-left {
+        margin-top: 0;
+    }
+
+    .top-right {
+        display: none;
+    }
+
+
+}
+
+/* ================== (530px-575px) ================= */
+@media (min-width: 530px) and (max-width: 575.98px) {
+    .top-bar-contact-num {
+        margin-left: 15px;
+    }
+
+    .brand-logo {
+        height: 90%;
+        width: 90%;
+    }
+
+    .login-button {
+        margin-left: 0;
+    }
+
+    .hamburger-menu {
+        margin-left: auto;
+    }
+
+    .book-online {
+       font-size: 14px;
+       font-weight: 600;
+    }
+
+
+    .top-left {
+        margin-top: 0;
+    }
+
+    .top-right {
+        display: none;
+    }
+
+}
+
+/* ======================================== (425px-529px) ======================================== */
+@media (min-width: 425px) and (max-width: 529.98px) {
+    .need-help {
+        text-align: left;
+        font-size: 15px;
+    }
+
+    .top-bar-contact-num {
+        margin-left: 15px;
+    }
+
+    .brand-logo {
+        height: 90%;
+        width: 90%;
+    }
+
+    .nav-items {
+        margin-top: 10px;
+    }
+
+    .hamburger-menu {
+        margin-left: auto;
+    }
+
+    .book-online {
+       font-size: 14px;
+       font-weight: 600;
+    }
+
+
+    .top-left {
+        margin-top: 0;
+    }
+
+    .top-right {
+        display: none;
+    }
+}
+
+/* ======================================== (375px-424px) ======================================== */
+@media (min-width: 375px) and (max-width: 424.98px) {
+    .top-left, .top-right {
+        display: none;
+    }
+
+    .small-device-top-left {
+        display: block;
+    }
+
+    .need-help {
+        font-size: 14px;
+        margin-left: 5px;
+    }
+
+    .top-bar-contact-num {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+    .top-bar-contact-num {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+    .brand-logo {
+        height: 90%;
+        width: 90%;
+    }
+
+    .nav-items {
+        margin-top: 10px;
+    }
+
+    .hamburger-menu {
+        margin-left: auto;
+    }
+
+    .book-online {
+       font-size: 14px;
+       font-weight: 600;
+    }
+
+}
+
+/* ======================================== (320px-374px) ======================================== */
+@media (min-width: 320px) and (max-width: 374.98px) {
+
+    .top-left, .top-right {
+        display: none;
+    }
+
+    .small-device-top-left {
+        display: none;
+    }
+
+
+    .need-help {
+        font-size: 14px;
+        margin-left: 5px;
+    }
+
+    .top-bar-contact-num {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+    .brand-logo {
+        height: 90%;
+        width: 90%;
+    }
+
+    .nav-items {
+        margin-top: 10px;
+    }
+
+    .hamburger-menu {
+        margin-left: auto;
+    }
+
+    .book-online {
+       font-size: 14px;
+       font-weight: 600;
+    }
+
+}

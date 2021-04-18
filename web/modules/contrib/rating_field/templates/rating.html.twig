@@ -1,0 +1,93 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a rating grid table.
+ *
+ * Available variables:
+ * - attributes: HTML attributes to apply to the <table> tag.
+ * - description: A localized string for the <caption> tag.
+ * - required: Flat to add a required mark in the title if required.
+ * - header: Table header cells. Each cell contains the following properties:
+ *   - tag: The HTML tag name to use (th).
+ *   - attributes: HTML attributes to apply to the <th> tag.
+ *   - content: A localized string for the title of the column.
+ * - rows: Table rows. Each row contains the following properties:
+ *   - data: Table cells.
+ *   - cells: Table cells of the row. Each cell contains the following keys:
+ *     - tag: The HTML tag name to use (td).
+ *     - attributes: HTML attributes to apply to the <td> tag.
+ *     - content: The string to display in the table cell.
+ * - empty: The message to display in an extra row if table does not have
+ *   any rows.
+ * - header_columns: The number of columns in the header.
+ * - striped: Flag indicating whether or not table rows should be striped.
+ * - responsive: Flag indicating whether or not the table should be wrapped to
+ *   be responsive (using the Bootstrap Framework .table-responsive wrapper).
+ * - show_label_field: Flag to show the label in the form.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_rating()
+ */
+#}
+{% if responsive %}
+  <div class="table-responsive">
+{% endif %}
+{%
+  set classes = [
+    'table',
+    'rating_field',
+    striped ? 'table-striped',
+  ]
+%}
+
+{% set label_attrib = create_attribute() %}
+{%
+  set label_classes = [
+    'control-label',
+    required ? 'js-form-required form-required',
+  ]
+%}
+{% if title and show_label_field %}
+  <label {{ label_attrib.addClass(label_classes) }}>{{ title }}</label>
+{% endif %}
+<table{{ attributes.addClass(classes) }}>
+  {% if header %}
+    <thead>
+      <tr>
+        {% for cell in header %}
+        <{{ cell.tag }}{{ cell.attributes.addClass(cell_classes) }}>
+        {{- cell.content -}}
+      </{{ cell.tag }}>
+      {% endfor %}
+      </tr>
+    </thead>
+  {% endif %}
+
+  {% if rows %}
+    <tbody>
+      {% for row in rows %}
+        {% set row_classes = [cycle(['odd', 'even'], loop.index0)] %}
+        <tr{{ row.attributes.addClass(row_classes) }}>
+          {% for cell in row.cells %}
+            <{{ cell.tag }}{{ cell.attributes }}>
+              {{- cell.content -}}
+            </{{ cell.tag }}>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  {% elseif empty %}
+    <tbody>
+      <tr class="odd">
+        <td colspan="{{ header_columns }}" class="empty message">{{ empty }}</td>
+      </tr>
+    </tbody>
+  {% endif %}
+  {% if description %}
+    <caption>{{ description }}</caption>
+  {% endif %}
+</table>
+{% if responsive %}
+  </div>
+{% endif %}

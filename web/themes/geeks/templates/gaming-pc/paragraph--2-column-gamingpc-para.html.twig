@@ -1,0 +1,122 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+<div{{ attributes.addClass(classes) }}>
+  {% block content %}
+
+
+      <div>
+      	<div class="container-fluid">
+      		<div class="row justify-content-center">
+
+            {% if content.field_gamingpc_fieldset.0['#paragraph'].field_fwgp_title.0.value != "" %}
+      			<div class="col-lg-6 col-md-12 right-border p-0">
+      				<div class="product-card"><img src="{{file_url(content.field_gamingpc_fieldset.0['#paragraph'].field_fwgp_image.entity.uri.value)}}" alt="laptop" class="img-fluid">
+      					<div class="pc-card-note p-2">
+                    <small class=" font-weight-bold text-white">
+                        {{ content.field_gamingpc_fieldset.0['#paragraph'].field_fwgp_note1.0.value|raw }}
+                    </small>
+                </div>
+      					<div class="product-card-content card-border text-white p-lg-5 p-md-5 p-sm-4 p-2">
+      						<h3 class="brand-color">{{ content.field_gamingpc_fieldset.0['#paragraph'].field_fwgp_title.0.value }}</h3>
+      						<p>  {{ content.field_gamingpc_fieldset.0['#paragraph'].field_fwgp_subtitle.0.value }} </p>
+      						<button class="product-card-btn" aria-controls="example-collapse-text" aria-expanded="true">See more</button>
+      						<div id="example-collapse-text" class="collapse show" style="">
+      							<div class="card-product-detail">
+                    {% set desc0 = content.field_gamingpc_fieldset.0['#paragraph'].field_fwgp_desc1.0.value|raw %}
+                    {% set desc0_array = desc0|split(',') %}
+      								<ul>
+                          {% for desc_one in desc0_array %}
+                                  <li>{{ desc_one }}</li>
+                          {% endfor %}
+      								</ul>
+      								<h5 class="text-right text-white">{{ content.field_gamingpc_fieldset.0['#paragraph'].field_fwgp_price.0.value }}</h5>
+                    </div>
+      						</div>
+      					</div>
+      				</div>
+      			</div>
+            {% endif %}
+
+
+            {% if content.field_gamingpc_fieldset.1['#paragraph'].field_fwgp_title.0.value != "" %}
+      			<div class="col-lg-6 col-md-12 p-0">
+      				<div class="product-card left-border"><img src="{{ file_url(content.field_gamingpc_fieldset.1['#paragraph'].field_fwgp_image.entity.uri.value) }}" alt="laptop" class="img-fluid">
+      					<div class="pc-card-note p-2">
+                  <small class="font-weight-bold text-white">
+                      {{ content.field_gamingpc_fieldset.1['#paragraph'].field_fwgp_note1.0.value }}
+                  </small>
+                </div>
+      					<div class="product-card-content card-border text-white p-lg-5 p-md-5 p-sm-4 p-2">
+      						<h3 class="brand-color">{{ content.field_gamingpc_fieldset.1['#paragraph'].field_fwgp_title.0.value }}</h3>
+      						<p>  {{ content.field_gamingpc_fieldset.1['#paragraph'].field_fwgp_subtitle.0.value }} </p>
+      						<button class="product-card-btn" aria-controls="example-collapse-text" aria-expanded="true">See more</button>
+      						<div id="example-collapse-text" class="collapse show" style="">
+      							<div class="card-product-detail">
+      								{% set desc1 = content.field_gamingpc_fieldset.1['#paragraph'].field_fwgp_desc1.0.value|raw %}
+                      {% set desc1_array = desc1|split(',') %}
+                      <ul>
+                            {% for desc_two in desc1_array %}
+                                    <li>{{ desc_two }}</li>
+                            {% endfor %}
+                      </ul>
+      								<h5 class="text-right text-white">{{ content.field_gamingpc_fieldset.1['#paragraph'].field_fwgp_price.0.value }}</h5></div>
+      						</div>
+      					</div>
+      				</div>
+      			</div>
+            {% endif %}
+
+      		</div>
+      	</div>
+      </div>
+
+    {% endblock %}
+  </div>
+{% endblock paragraph %}
