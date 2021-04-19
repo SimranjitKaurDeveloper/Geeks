@@ -809,4 +809,4 @@ $databases['default']['default'] = array (
 $settings['config_sync_directory'] = 'sites/default/files/config_S_6wfyqiFwnoyHZfUvAvgf4dyqfdoejP7RvQnVPs8HE_Zd6hU8YZwSk9aCz8LHW_Ni7poV4xrg/sync';
 
 /*--Show Error (Comment this line if on production server)---*/
-$config['system.logging']['error_level'] = 'verbose';
+/*$config['system.logging']['error_level'] = 'verbose';*/
